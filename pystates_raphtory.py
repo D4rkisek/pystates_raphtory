@@ -13,4 +13,12 @@ from pystates import all_spectrums, snapshot_dist
 # 2. Put the adjency matrices into a dict, where the key is the index of the window and val is the adjency matrix
 #
 # what kind of data strucure should the dictionary key be? 
-# I assume it would be numpy 2d array, right?
+# I assume it would be numpy 2d array
+
+# Identify all unique nodes
+def create_adjacency_matrix(self):
+    nodes = set()
+    for edge in self.graph.edges:
+        nodes.add(edge.src.name)
+        nodes.add(edge.dst.name)
+    nodes = list(nodes)
